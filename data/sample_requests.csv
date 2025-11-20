@@ -1,0 +1,8 @@
+```csv
+request,label
+"GET /index.php?id=1 HTTP/1.1","benign"
+"GET /products.php?category=shoes&page=2 HTTP/1.1","benign"
+"POST /login HTTP/1.1 username=admin&password=123456","benign"
+"GET /index.php?id=1 UNION SELECT username,password FROM users-- HTTP/1.1","malicious"
+"GET /search.php?q=<script>alert(1)</script> HTTP/1.1","malicious"
+"GET /download.php?file=../../etc/passwd HTTP/1.1","malicious"
