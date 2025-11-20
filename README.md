@@ -16,3 +16,16 @@
 Клиент → Reverse Proxy (Nginx/Traefik) → AI-WAF Middleware → Web-приложение
                           │
                     Logging / Dataset
+
+AI-WAF состоит из:
+Rule-based слоя — быстрые проверки по регулярным выражениям/сигнатурам,
+ML-движка — классификация запросов (benign / malicious),
+Decision-модуля — принятие решения (allow / block / log),
+Подсистемы логирования — сбор данных для анализа и дообучения модели.
+
+Структура репозитория
+data/        – датасеты HTTP-запросов (нормальные и вредоносные)
+notebooks/   – Jupyter/Colab ноутбуки с обработкой данных и обучением моделей
+prototype/   – прототип AI-WAF (middleware, rule-based фильтры, интеграция)
+diagrams/    – схемы архитектуры, UML, pipeline
+README.md    – описание проекта
